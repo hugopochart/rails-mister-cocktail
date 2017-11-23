@@ -1,0 +1,13 @@
+<h2> <%= @cocktail.name %></h2>
+
+
+<% @cocktail.ingredients.each_with_index do |elt,ind| %>
+  <div class="comment-show-desc ">
+    <p> Ingredient: <%= elt.name%></p>
+    <p> ----->dose: <%= @cocktail.doses[ind].description%></p>
+  </div>
+<% end%>
+
+<%= link_to "new Ingredient", new_cocktail_dose_path(@cocktail)%>
+
+
