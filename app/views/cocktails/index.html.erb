@@ -1,12 +1,25 @@
 <h1>All Cocktails</h1>
 <div class="container">
-  <% @cocktails.each do |restaurant| %>
-    <h2><%= restaurant.name %></h2>
-    <h2><%= restaurant.id %></h2>
-    <% restaurant.doses do |dose|%>
-      <p><%= dose.content %></p>
-    <%end%>
- <% end %>
+  <div class="row">
+    <% @cocktails.each_with_index do |restaurant, ind| %>
+      <div class="col-sm-6">
+        <div class="card">
+        <img class="card-user" src="http://www.capital8bysodexo.com/wp-content/themes/capital8-2/img-src/espaces/logo-espace-cocktail-select.png">
+        <div class="card-category"><%= link_to restaurant.name, cocktail_path(restaurant), style: "color: #ee0000" %></div>
+        <div class="card-description">
+          <p>Ingredient : <%= restaurant.ingredients[0].name%></p>
+          <p>Dose : <%= restaurant.doses[0].description%></p>
+        </div>
+        <div class="card-description1">
+        </div>
+
+          <%= link_to "",cocktail_path(restaurant), class: "card-link" %>
+
+
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <%= link_to "+", new_cocktail_path%>
