@@ -138,7 +138,7 @@ align-content: center; }
 }
 
 .footer {
-  background: white;
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -180,4 +180,8 @@ align-content: center; }
 
 .btn-top {
   margin-bottom: 25px;
+}
+
+.pad11 {
+  height: 100%;
 }
