@@ -1,4 +1,8 @@
-  <div class="container" , style="height: 100vh;>
+  <div class="container" , style="height: 100vh;"">
+   <p class="dock-item1"><%= link_to image_tag("http://freevector.co/wp-content/uploads/2012/09/14367-go-back-arrow1.png", :border => 0, :width => 50, :height => 50,:alt => '', :title => ''), cocktails_path, :class => 'dock-item' %></p>
+
+
+
     <div class="wrapper text-center">
       <div class="row">
         <div class="col-xs-12 show-disp">
@@ -18,5 +22,10 @@
         </div>
       </div>
     </div>
-    <button class="btn-bot btn"> <%= link_to "All Cocktails", cocktails_path, style: "color: #ee0000"%></button>
+    <div class = btn-disp-fl>
+
+      <button class="btn-bot btn"><%= link_to "Delete", cocktail_path(@cocktail),
+        method: :delete,
+        data: { confirm: "Are you sure?" } , style: "color: #ee0000"%></button>
+    </div>
   </div>

@@ -178,6 +178,13 @@ align-content: center; }
   border: 1px solid #ee0000;
 }
 
+.btn-bot1 {
+  margin-top: 40px;
+  border: 1px solid #ee0000;
+  background-image:url('http://freevector.co/wp-content/uploads/2012/09/14367-go-back-arrow1.png');
+
+}
+
 .btn-top {
   margin-bottom: 25px;
 }
@@ -185,3 +192,17 @@ align-content: center; }
 .pad11 {
   height: 100%;
 }
+
+.btn-disp-fl {
+  display: flex;
+  justify-content: center;
+ }
+
+ .dock-item {
+  height: 50px;
+  width: 50px;
+ }
+
+ .dock-item1{
+  margin-top: 15px;
+ }

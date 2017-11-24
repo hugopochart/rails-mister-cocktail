@@ -6,15 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'open-uri'
+require 'json'
 
 Dose.destroy_all
 Cocktail.destroy_all
 Ingredient.destroy_all
 
-5.times do
-  ing = Ingredient.create!(
-    name:    Faker::Book.title
-  )
-  puts "ingredient created"
+  res = "http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+  hash = JSON.parse(open(res).read)
+  hash["drinks"].each do |elt|
+    ing = Ingredient.create!(
+    name: elt["strIngredient1"]
+    )
+  end
 
-end
+
+
+# 5.times do
+#   ing = Ingredient.create!(
+#     name:    Faker::Book.title
+#   )
+#   puts "ingredient created"
+
+# end
