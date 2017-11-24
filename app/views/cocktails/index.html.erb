@@ -1,4 +1,15 @@
+<div class="left-opp">
+  <%= simple_form_for(cocktails_path, :method => "get", id: "search-form", ) do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+        <%= submit_tag "Search", :name => nil, class: "btn btn-xs"%>
+  <% end %>
+</div>
+
+<div class="in-comment">
+
 <h1>All Cocktails</h1>
+<p class="dock-item1"><%= link_to image_tag("https://maxcdn.icons8.com/Share/icon/win10/User_Interface//add1600.png", :border => 0, :width => 50, :height => 50,:alt => '', :title => ''), new_cocktail_path, :class => 'dock-item' %></p>
+</div>
 <div class="container", style="height: 100vh;">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
@@ -27,4 +38,3 @@
   </div>
 </div>
 
-<%= link_to "+", new_cocktail_path%>

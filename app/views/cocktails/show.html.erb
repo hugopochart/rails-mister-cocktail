@@ -1,4 +1,4 @@
-  <div class="container" , style="height: 100vh;"">
+  <div class="container">
    <p class="dock-item1"><%= link_to image_tag("http://freevector.co/wp-content/uploads/2012/09/14367-go-back-arrow1.png", :border => 0, :width => 50, :height => 50,:alt => '', :title => ''), cocktails_path, :class => 'dock-item' %></p>
 
 
@@ -11,9 +11,13 @@
 
           <% @cocktail.ingredients.each_with_index do |elt,ind| %>
             <div class="comment-show-desc ">
-              <p> Ingredient: <%= elt.name%></p>
-              <p class= "dose-pad"> dose: <%= @cocktail.doses[ind].description%></p>
-
+                <div>
+                  <p> Ingredient:<%= elt.name%></p>
+                  <p> dose:<%=@cocktail.doses[ind].description%></p>
+                </div>
+                <%= link_to "Delete", cocktail_dose_path(@cocktail,@cocktail.doses[ind]),
+                method: :delete,
+                data: { confirm: "Are you sure?" } , style: "color: #ee0000"%>
             </div>
           <% end%>
           <div >
