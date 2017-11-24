@@ -38,6 +38,8 @@ gem "font-awesome-sass"
 gem "simple_form"
 gem "autoprefixer-rails"
 gem 'figaro'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
 
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
