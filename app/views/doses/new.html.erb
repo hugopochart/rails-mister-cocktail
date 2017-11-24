@@ -1,10 +1,11 @@
-
-<div class="wrapper">
-  <%= simple_form_for [@cocktail,@dose] do |f| %>
-    <%= f.input :description %>
-    <%= f.input :ingredient_id, collection: Ingredient.all, as: :select %>
-    <%= f.submit "add a Cocktail" %>
-  <% end %>
+<div class="container" , style="height: 100vh;">
+  <div class="wrapper">
+    <%= simple_form_for [@cocktail,@dose] do |f| %>
+      <%= f.input :description %>
+      <%= f.input :ingredient_id, collection: Ingredient.all, as: :select %>
+      <%= f.submit "add a Dose" %>
+    <% end %>
+  </div>
 </div>
 
 
